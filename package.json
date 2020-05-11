@@ -1,0 +1,25 @@
+{
+  "name": "bem-clsx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "tsc",
+    "test": "jest"
+  },
+  "types": "dist/index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "verbose": true
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "25",
+    "ts-jest": "^25.5.1",
+    "typescript": "^3.8.3"
+  }
+}
