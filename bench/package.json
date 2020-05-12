@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "bem-cn": "^3.0.1",
+    "bem-cn-fast": "^1.0.2",
+    "bem-cn-lite": "^4.0.0",
+    "bem-join": "^2.0.2",
+    "benchmark": "^2.1.4"
+  }
+}

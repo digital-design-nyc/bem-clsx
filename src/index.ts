@@ -5,7 +5,7 @@ export interface IOptions {
   modifierValueSeparator: string
 }
 
-export type IModifiers = Record<string, string | boolean | undefined>
+export type IModifiers = Record<string, string | boolean | undefined | null>
 
 export const DEFAULT_OPTIONS: IOptions = {
 	elementSeparator: '__',
@@ -21,8 +21,7 @@ function makeMixins(): string {
   for (let i = 0; i < arguments.length; i++) {
     const mixin = arguments[i]
     if (mixin) {
-      cls += ' '
-      cls += mixin
+      cls += ' ' + mixin
     }
   }
   return cls
@@ -43,14 +42,11 @@ export const block = (
   function element(
     elementNameOrMods?: string | IModifiers | null | undefined,
     modsOrMixin?: IModifiers | Mixin | null | undefined,
-    ...mixins: Mixin[]
   ): string {
-
     let baseName = namespace || ''
     baseName += blockName
     if (elementNameOrMods && typeof elementNameOrMods === 'string') {
-      baseName += elementSeparator
-      baseName += elementNameOrMods
+      baseName += elementSeparator + elementNameOrMods
     }
 
     let cls = baseName
@@ -65,28 +61,25 @@ export const block = (
       mods = modsOrMixin
     }
 
-
     if (mods) {
       for (const mod in mods) {
         const modVal = mods[mod]
         if (modVal) {
-          cls += ' '
-          cls += baseName
-          cls += modifierSeparator
-          cls += mod
+          cls += ' ' + baseName + modifierSeparator + mod
           if (modVal !== true) {
-            cls += modifierValueSeparator
-            cls += modVal
+            cls += modifierValueSeparator + modVal
           }
         }
       }
     }
 
-    if (modsOrMixin && typeof modsOrMixin === 'string') {
+    if (typeof modsOrMixin === 'string') {
       cls += makeMixins(modsOrMixin)
     }
 
-    cls += makeMixins(...mixins)
+    for (let i = 2; i < arguments.length; i++) {
+      cls += makeMixins(arguments[i])
+    }
 
     return cls
   }

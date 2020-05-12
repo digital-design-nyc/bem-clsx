@@ -9,6 +9,24 @@ describe('module', () => {
     expect(cls).toEqual('block__element')
   })
 
+  it('makes element with null modifier', () => {
+    const cls = b('element', { modifier: null })
+
+    expect(cls).toEqual('block__element')
+  })
+
+  it('makes element with undefined modifier', () => {
+    const cls = b('element', { modifier: undefined })
+
+    expect(cls).toEqual('block__element')
+  })
+
+  it('makes element with falsey modifier', () => {
+    const cls = b('element', { modifier: false })
+
+    expect(cls).toEqual('block__element')
+  })
+
   it('makes element with modifier', () => {
     const cls = b('element', { modifier: true })
 
