@@ -10,7 +10,7 @@ export type IModifiers = Record<string, string | boolean | undefined | null>
 export const DEFAULT_OPTIONS: IOptions = {
 	elementSeparator: '__',
   modifierSeparator: '_',
-  modifierValueSeparator: '_'
+  modifierValueSeparator: '_',
 }
 
 export type Mixin = string | boolean | undefined | null
