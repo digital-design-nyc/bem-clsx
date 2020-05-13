@@ -16,7 +16,7 @@ $ yarn add bem-clsx
 
 ## Usage
 ```js
-import block from 'bem-cn-lite'
+import block from 'bem-clsx'
 
 const b = block('block')
 ```
