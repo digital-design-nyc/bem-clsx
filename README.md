@@ -1,5 +1,5 @@
 # bem-clsx
-Simple and fast [BEM](https://en.bem.info/) class names generator with mixin support.
+Simple and fast [BEM](https://en.bem.info/) class names generator with mixin support. Inspired by [clsx](https://github.com/lukeed/clsx) and [bem-cn](https://github.com/albburtsev/bem-cn)
 - No dependencies.
 - Useful for [React](#react-example)
 - [TypeScript](https://www.typescriptlang.org/) definitions.
@@ -7,7 +7,7 @@ Simple and fast [BEM](https://en.bem.info/) class names generator with mixin sup
 - Mixins
 ## Installation
 ```
-$ npm install bem-clsx
+$ npm install bem-clsx --save
 ```
 or
 ```
@@ -103,7 +103,7 @@ const  customConfig  = {
 }
 
 const customBlock = (blockName: string) => (
-	block(blockName, customConfig)
+  block(blockName, customConfig)
 )
 
 export default customBlock
