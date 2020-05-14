@@ -1,20 +1,34 @@
 {
   "name": "bem-clsx",
   "version": "1.0.0",
-  "description": "",
+  "description": "BEM class names generator with mixins support",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "tsc",
     "test": "jest"
   },
   "types": "dist/index.d.ts",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "verbose": true
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
+  "keywords": [
+    "BEM",
+    "React",
+    "class",
+    "classname",
+    "block",
+    "element",
+    "modifier"
+  ],
+  "author": {
+    "name": "Ivan Rudskikh",
+    "url": "https://github.com/shredder-rull"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:digital-design-nyc/bem-clsx.git"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
